@@ -25,7 +25,10 @@ let package = Package(
             name: "Gallery",
             dependencies: [],
             exclude: ["Extensions/Bundle+Resources.swift"],
-            resources: [.process("Resources/Gallery.bundle")]),
+            resources: [
+                .copy("PrivacyInfo.xcprivacy"),
+                .process("Resources/Gallery.bundle")
+            ]),
         .testTarget(
             name: "GalleryTests",
             dependencies: ["Gallery"]),
